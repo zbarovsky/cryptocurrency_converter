@@ -9,11 +9,13 @@ function Converter() {
     let [cryptoList, setCryptoList] = useState([]);
 
     // states for holding which crypto is picked in conversion form
-    let [cryptoOne, setCryptoOne] = useState([]);
-    let [cryptoTwo, setCryptoTwo] = useState([]);
+    let [cryptoOne, setCryptoOne] = useState('');
+    //let [cryptoOneId, setCryptoOneId] = useState([])
+
+    let [cryptoTwo, setCryptoTwo] = useState('');
+    //let [cryptoTwoId, setCryptoTwoId] = useState([])
 
     let cryptoOneSelection = (e) => {
-        e.preventDefault()
         setCryptoOne(e.target.value)
         console.log(cryptoOne)
     }
@@ -49,7 +51,7 @@ function Converter() {
                         <select onChange={cryptoOneSelection}>
                             <option>Select Below</option>
                             {cryptoList.slice(0,10).map((crypto, i) => (
-                                <option key={i}>{crypto.name}</option>
+                                <option value={crypto.id} key={i}>{crypto.name}</option>
                             ))}
                         </select>
                     </div>
@@ -58,14 +60,12 @@ function Converter() {
                         <select onChange={cryptoTwoSelection}>
                             <option>Select Below</option>
                             {cryptoList.slice(0,10).map((crypto, i) => (
-                                <option key={i}>{crypto.name}</option>
+                                <option value={crypto.id} key={i}>{crypto.name}</option>
                             ))}
                         </select>
                     </div>
-
                 </form>
             </div>
-            
             <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} />
         </div>
     )
