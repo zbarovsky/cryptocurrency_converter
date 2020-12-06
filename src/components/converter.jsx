@@ -9,15 +9,18 @@ function Converter() {
     let [cryptoList, setCryptoList] = useState([]);
 
     // states for holding which crypto is picked in conversion form
-    let [cryptoOne, setCryptoOne] = useState('');
-    let [cryptoTwo, setCryptoTwo] = useState('');
+    let [cryptoOne, setCryptoOne] = useState([]);
+    let [cryptoTwo, setCryptoTwo] = useState([]);
 
-    let cryptoOneSubmit = (e) => {
+    let cryptoOneSelection = (e) => {
+        e.preventDefault()
         setCryptoOne(e.target.value)
+        console.log(cryptoOne)
     }
 
-    let cryptoTwoSubmit = (e) => {
+    let cryptoTwoSelection = (e) => {
         setCryptoTwo(e.target.value)
+        console.log(cryptoTwo)
     }
 
     // function to get list of crypto currency for rate comparison
@@ -36,23 +39,29 @@ function Converter() {
 
     return (
         <div>
-            {/* TODO: WRITE FOR LOOP TO GET TOP 10 CRYPTO CURRENCIES TO PUT INTO DROP DOWN LISTS */}
             <div>
-                <Form>
-                    <Form.Group>
-                        <Form.Label>Select Currencies Below</Form.Label>
-                        <Form.Control as='select'>
+                <form>
+                    <div>
+                        <label>Select Currencies to compare below</label>
+                    </div>
+                    <div>
+                        <label>Coin One: </label>
+                        <select onChange={cryptoOneSelection}>
                             {cryptoList.slice(0,9).map((crypto, i) => (
                                 <option key={i}>{crypto.name}</option>
                             ))}
-                        </Form.Control>
-                        <Form.Control as='select'>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Coin Two: </label>
+                        <select onChange={cryptoTwoSelection}>
                             {cryptoList.slice(0,9).map((crypto, i) => (
                                 <option key={i}>{crypto.name}</option>
                             ))}
-                        </Form.Control>
-                    </Form.Group>
-                </Form>
+                        </select>
+                    </div>
+
+                </form>
             </div>
             
             <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} />
