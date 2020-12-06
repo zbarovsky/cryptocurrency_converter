@@ -47,7 +47,8 @@ function Converter() {
                     <div>
                         <label>Coin One: </label>
                         <select onChange={cryptoOneSelection}>
-                            {cryptoList.slice(0,9).map((crypto, i) => (
+                            <option>Select Below</option>
+                            {cryptoList.slice(0,10).map((crypto, i) => (
                                 <option key={i}>{crypto.name}</option>
                             ))}
                         </select>
@@ -55,7 +56,8 @@ function Converter() {
                     <div>
                         <label>Coin Two: </label>
                         <select onChange={cryptoTwoSelection}>
-                            {cryptoList.slice(0,9).map((crypto, i) => (
+                            <option>Select Below</option>
+                            {cryptoList.slice(0,10).map((crypto, i) => (
                                 <option key={i}>{crypto.name}</option>
                             ))}
                         </select>
