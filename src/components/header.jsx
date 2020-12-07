@@ -11,11 +11,6 @@ function Header() {
                     Cryptocurrency Exhange Program
                 </h1>
             </div>
-            <div className='subtitle'>
-                {/* <h3>
-                    for all your Cryptocurrency needs.
-                </h3> */}
-            </div>
         </div>
     )
 }

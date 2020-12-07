@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import Converter from './converter'
 
 function Output({cryptoOne, cryptoTwo, amount}) {
 
@@ -16,7 +15,7 @@ function Output({cryptoOne, cryptoTwo, amount}) {
 
         .then(response => {
             setOutput(response.data.price)
-            console.log(response.data.price)
+            // console.log(response.data.price)
         }).catch(err => {
             console.log('🐳🐳🐳🐳🐳🐳 ' + err)
         })

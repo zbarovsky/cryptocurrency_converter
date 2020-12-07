@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Form, FormControl} from 'react-bootstrap';
 import axios from 'axios';
 import Output from './output';
 
@@ -17,17 +16,17 @@ function Converter() {
 
     let cryptoOneSelection = (e) => {
         setCryptoOne(e.target.value)
-        console.log(cryptoOne)
+        // console.log(cryptoOne)
     }
 
     let cryptoTwoSelection = (e) => {
         setCryptoTwo(e.target.value)
-        console.log(cryptoTwo)
+        // console.log(cryptoTwo)
     }
 
     let currencyAmount = (e) => {
         setAmount(e.target.value)
-        console.log(typeof(amount))
+        // console.log(typeof(amount))
     }
 
     // function to get list of crypto currency for rate comparison
@@ -36,9 +35,8 @@ function Converter() {
 
         .then(response => {
             setCryptoList(response.data)
-            console.log(response.data[0])
+            // console.log(response.data[0])
         }) .catch(err => {
-            console.log('💩💩💩💩💩💩')
             console.log(err)
         })
     }, [])
@@ -71,7 +69,7 @@ function Converter() {
                     </div>
                     <div className='form-units'>
                         <label>Amount: </label>
-                        <input type='text' pattern='[0-9]*' placeholder='please enter a number' onChange={currencyAmount}></input>
+                        <input type='text' pattern='[0-9]*' placeholder='0' onChange={currencyAmount} size='13'></input>
                     </div>
                     <div className='form-output'>
                         <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} amount={amount} />
