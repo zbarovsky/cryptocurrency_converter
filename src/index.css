@@ -1,5 +1,7 @@
-
-
+* {
+  background-color: #474440;
+  color: #BFCAD0;
+}
 
 body {
   margin: 0;
@@ -13,4 +15,65 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.instructions {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.form {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-style: inset black;
+  border-radius: 10px;
+  background-color: white;
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+label {
+  color: black;
+  background-color: white;
+}
+
+select {
+  background-color: rgb(211, 211, 211);
+  color: black;
+  border-radius: 10px;
+}
+
+input {
+  background-color: rgb(211, 211, 211);
+  color: black;
+  border-radius: 5px;
+}
+
+.form-main-label {
+  background-color: white;
+  padding-bottom: 15px;
+}
+
+.form-coinOne {
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+.form-coinTwo {
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+.form-units {
+  background-color: white;
 }

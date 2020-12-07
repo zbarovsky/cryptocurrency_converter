@@ -5,16 +5,16 @@ function Header() {
 
 
     return (
-        <div>
-            <div>
+        <div className='header-container'>
+            <div className='title'>
                 <h1>
                     Cryptocurrency Exhange Program
                 </h1>
             </div>
-            <div>
-                <h3>
+            <div className='subtitle'>
+                {/* <h3>
                     for all your Cryptocurrency needs.
-                </h3>
+                </h3> */}
             </div>
         </div>
     )

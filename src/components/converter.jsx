@@ -11,7 +11,7 @@ function Converter() {
     // states for holding which crypto is picked in conversion form
     let [cryptoOne, setCryptoOne] = useState('');
     let [cryptoTwo, setCryptoTwo] = useState('');
-    
+
     let [amount, setAmount] = useState(0)
 
 
@@ -46,12 +46,12 @@ function Converter() {
 
     return (
         <div>
-            <div>
-                <form>
-                    <div>
+            <div className='form-container'>
+                <form className='form'>
+                    <div className='form-main-label'>
                         <label>Select currencies to compare below</label>
                     </div>
-                    <div>
+                    <div className='form-coinOne'>
                         <label>Coin One: </label>
                         <select onChange={cryptoOneSelection}>
                             <option>Select Below</option>
@@ -60,7 +60,7 @@ function Converter() {
                             ))}
                         </select>
                     </div>
-                    <div>
+                    <div className='form-coinTwo'>
                         <label>Coin Two: </label>
                         <select onChange={cryptoTwoSelection}>
                             <option>Select Below</option>
@@ -69,8 +69,8 @@ function Converter() {
                             ))}
                         </select>
                     </div>
-                    <div>
-                        <label>Units: </label>
+                    <div className='form-units'>
+                        <label>Amount: </label>
                         <input type='text' pattern='[0-9]*' placeholder='please enter a number' onChange={currencyAmount}></input>
                     </div>
                 </form>
