@@ -4,8 +4,8 @@ function Footer() {
 
 
     return (
-        <div>
-            <p>copyright 2020©</p>
+        <div className='footer'>
+            <p>© Copyright 2020</p>
         </div>
     )
 }
