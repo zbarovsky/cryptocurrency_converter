@@ -73,9 +73,11 @@ function Converter() {
                         <label>Amount: </label>
                         <input type='text' pattern='[0-9]*' placeholder='please enter a number' onChange={currencyAmount}></input>
                     </div>
+                    <div className='form-output'>
+                        <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} amount={amount} />
+                    </div>
                 </form>
             </div>
-            <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} amount={amount} />
         </div>
     )
 }

@@ -77,3 +77,8 @@ input {
 .form-units {
   background-color: white;
 }
+
+.form-output h3 {
+  background-color: white;
+  color: black;
+}

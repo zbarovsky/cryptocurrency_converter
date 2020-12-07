@@ -25,9 +25,9 @@ function Output({cryptoOne, cryptoTwo, amount}) {
     let finalOutput = parseFloat(output).toFixed(2)
 
     if (isNaN(finalOutput) && amount == 0) {
-        return <p>please select currency to compare</p>
+        return <h3>Please select currency to compare</h3>
     } else {
-        return <p>the conversion rate per {amount} unit(s) is: {finalOutput}</p>
+        return <h3>The conversion rate per {amount} unit(s) is: {finalOutput}</h3>
     }
 }
 
