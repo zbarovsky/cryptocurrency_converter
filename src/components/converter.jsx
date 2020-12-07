@@ -44,7 +44,7 @@ function Converter() {
             <div>
                 <form>
                     <div>
-                        <label>Select Currencies to compare below</label>
+                        <label>Select currencies to compare below</label>
                     </div>
                     <div>
                         <label>Coin One: </label>

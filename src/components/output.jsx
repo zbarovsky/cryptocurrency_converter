@@ -17,24 +17,18 @@ function Output({cryptoOne, cryptoTwo}) {
         .then(response => {
             setOutput(response.data.price)
             console.log(response.data.price)
-        }) .catch(err => {
+        }).catch(err => {
             console.log('🐳🐳🐳🐳🐳🐳 ' + err)
         })
     })
 
+    let finalOutput = parseFloat(output).toFixed(2)
 
-
-    return (
-        <div>
-            <div>
-                <h1>you chose, {cryptoOne} and {cryptoTwo}</h1>
-
-            </div>
-            <div>
-                <h2>the conversion rate is: {output} per unit</h2>
-            </div>
-        </div>
-    )
+    if (isNaN(finalOutput)) {
+        return <p>please select currency to compare</p>
+    } else {
+        return <p>the conversion rate per 1 unit is: {finalOutput}</p>
+    }
 }
 
 export default Output
