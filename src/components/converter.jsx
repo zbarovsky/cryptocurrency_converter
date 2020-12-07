@@ -11,6 +11,7 @@ function Converter() {
     // states for holding which crypto is picked in conversion form
     let [cryptoOne, setCryptoOne] = useState('');
     let [cryptoTwo, setCryptoTwo] = useState('');
+    
     let [amount, setAmount] = useState(0)
 
 
