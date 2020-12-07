@@ -10,10 +10,9 @@ function Converter() {
 
     // states for holding which crypto is picked in conversion form
     let [cryptoOne, setCryptoOne] = useState('');
-    //let [cryptoOneId, setCryptoOneId] = useState([])
-
     let [cryptoTwo, setCryptoTwo] = useState('');
-    //let [cryptoTwoId, setCryptoTwoId] = useState([])
+    let [amount, setAmount] = useState(0)
+
 
     let cryptoOneSelection = (e) => {
         setCryptoOne(e.target.value)
@@ -23,6 +22,11 @@ function Converter() {
     let cryptoTwoSelection = (e) => {
         setCryptoTwo(e.target.value)
         console.log(cryptoTwo)
+    }
+
+    let currencyAmount = (e) => {
+        setAmount(e.target.value)
+        console.log(typeof(amount))
     }
 
     // function to get list of crypto currency for rate comparison
@@ -64,9 +68,13 @@ function Converter() {
                             ))}
                         </select>
                     </div>
+                    <div>
+                        <label>Units: </label>
+                        <input type='text' pattern='[0-9]*' placeholder='please enter a number' onChange={currencyAmount}></input>
+                    </div>
                 </form>
             </div>
-            <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} />
+            <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} amount={amount} />
         </div>
     )
 }

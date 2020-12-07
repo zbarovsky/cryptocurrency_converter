@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Converter from './converter'
 
-function Output({cryptoOne, cryptoTwo}) {
+function Output({cryptoOne, cryptoTwo, amount}) {
 
     let [output, setOutput] = useState([])
 
@@ -10,7 +10,7 @@ function Output({cryptoOne, cryptoTwo}) {
         axios.get(`https://api.coinpaprika.com/v1/price-converter`, {
             params: {base_currency_id: cryptoOne,
                     quote_currency_id: cryptoTwo,
-                    amount: 1
+                    amount: amount
             }
         }, output)
 
@@ -24,10 +24,10 @@ function Output({cryptoOne, cryptoTwo}) {
 
     let finalOutput = parseFloat(output).toFixed(2)
 
-    if (isNaN(finalOutput)) {
+    if (isNaN(finalOutput) && amount == 0) {
         return <p>please select currency to compare</p>
     } else {
-        return <p>the conversion rate per 1 unit is: {finalOutput}</p>
+        return <p>the conversion rate per {amount} unit(s) is: {finalOutput}</p>
     }
 }
 
