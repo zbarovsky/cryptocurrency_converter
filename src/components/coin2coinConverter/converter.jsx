@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Form} from 'react-bootstrap'
 import axios from 'axios';
 import Output from './output';
 
@@ -44,7 +45,7 @@ function Converter() {
 
     return (
         <div>
-            <div className='form-container'>
+            {/* <div className='form-container'>
                 <form className='form'>
                     <div className='form-main-label'>
                         <label>Select currencies to compare below</label>
@@ -75,7 +76,40 @@ function Converter() {
                         <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} amount={amount} />
                     </div>
                 </form>
-            </div>
+            </div> */}
+
+            <Form className='form'>
+                <Form.Group>
+                    <Form.Label>Select Currencies to compare below</Form.Label>
+                        <Form.Group>
+                            <Form.Label>Coin One: </Form.Label>
+                            <Form.Control as='select' onChange={cryptoOneSelection} className='p-5'>
+                            <option>Select Below</option>
+                            {cryptoList.slice(0,10).map((crypto, i) => (
+                                    <option value={crypto.id} key={i}>{crypto.name}</option>
+                            ))}
+                            </Form.Control>
+                        </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label>Coin Two: </Form.Label>
+                        <Form.Control as='select' onChange={cryptoTwoSelection}>
+                            <option>Select Below</option>
+                            {cryptoList.slice(0,10).map((crypto, i) => (
+                                    <option value={crypto.id} key={i}>{crypto.name}</option>
+                            ))}
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Amount </Form.Label>
+                        <Form.Control type='text' pattern='[0-9]*' size='lg' placeholder='0' onChange={currencyAmount}></Form.Control>
+                    </Form.Group>
+
+                    <Output cryptoOne={cryptoOne} cryptoTwo={cryptoTwo} amount={amount} />
+                </Form.Group>
+            </Form>
+
+
         </div>
     )
 }

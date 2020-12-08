@@ -1,3 +1,8 @@
 ![wireframe mockup](public/wireframe.png)
 
-https://wireframe.cc/AWbVD8
+
+### TODO:
+
+- navbar
+- search for specific coins and get info about them
+- converter for coin -> monetary value

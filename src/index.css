@@ -1,6 +1,6 @@
 * {
-  background-color: #474440;
-  color: #BFCAD0;
+  background-color: ghostwhite;
+  color: #13143A;
 }
 
 body {
@@ -33,54 +33,13 @@ code {
 
 .form {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  border-style: inset black;
+  border-style: solid;
   border-radius: 10px;
-  background-color: white;
   width: 40%;
   margin: 0 auto;
   padding-top: 1em;
   padding-bottom: 1em;
-}
-
-label {
-  color: black;
-  background-color: white;
-}
-
-select {
-  background-color: rgb(211, 211, 211);
-  color: black;
-  border-radius: 10px;
-}
-
-input {
-  background-color: rgb(211, 211, 211);
-  color: black;
-  border-radius: 5px;
-}
-
-.form-main-label {
-  background-color: white;
-  padding-bottom: 15px;
-}
-
-.form-coinOne {
-  background-color: white;
-  padding-bottom: 5px;
-}
-
-.form-coinTwo {
-  background-color: white;
-  padding-bottom: 5px;
-}
-
-.form-units {
-  background-color: white;
-}
-
-.form-output h3 {
-  background-color: white;
-  color: black;
+  overflow: auto;
 }
 
 footer {

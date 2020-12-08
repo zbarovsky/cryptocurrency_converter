@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './components/header'
-import Instructions from './components/instructions';
-import Converter from './components/converter';
+import Instructions from './components/coin2coinConverter/instructions';
+import Converter from './components/coin2coinConverter/converter';
 import Footer from './components/footer';
-//import './App.css';
 
 function App() {
   return (
